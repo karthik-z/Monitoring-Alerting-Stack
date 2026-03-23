@@ -1,6 +1,6 @@
 # Monitoring & Alerting Stack
 
-A production-grade observability stack built with **Prometheus**, **Grafana**, **Alertmanager**, and a instrumented **Node.js** application — all running locally via Docker Compose.
+A production-grade observability stack built with **Prometheus**, **Grafana**, **Alertmanager**, and an instrumented **Node.js** application — all running locally via Docker Compose.
 
 ![Stack](https://img.shields.io/badge/Prometheus-3.10-orange?logo=prometheus) ![Grafana](https://img.shields.io/badge/Grafana-latest-orange?logo=grafana) ![Node.js](https://img.shields.io/badge/Node.js-20-green?logo=node.js) ![Docker](https://img.shields.io/badge/Docker-Compose-blue?logo=docker)
 
@@ -65,8 +65,8 @@ docker compose version
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/monitoring-stack.git
-cd monitoring-stack
+git clone https://github.com/your-username/Monitoring-Alerting-Stack.git
+cd Monitoring-Alerting-Stack
 
 # 2. Start the full stack
 docker compose up --build -d
@@ -282,6 +282,29 @@ Then reload: `curl -X POST http://localhost:9090/-/reload`
 
 ---
 
+## Push to GitHub
+
+```bash
+cd monitoring-stack
+git init
+git add .
+git commit -m "feat: prometheus + grafana monitoring stack"
+git remote add origin https://github.com/your-username/Monitoring-Alerting-Stack.git
+git push -u origin main
+```
+
+Add a `.gitignore` to keep the repo clean:
+
+```bash
+cat > .gitignore << 'EOF'
+node_modules/
+app/node_modules/
+*.log
+EOF
+```
+
+---
+
 ## References
 
 - [Prometheus documentation](https://prometheus.io/docs/)
@@ -291,7 +314,3 @@ Then reload: `curl -X POST http://localhost:9090/-/reload`
 - [Alertmanager configuration](https://prometheus.io/docs/alerting/latest/configuration/)
 
 ---
-
-## License
-
-MIT
